@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Status List</title>
+  <style>
+    table {
+      width: 60%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: small;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    h2 {
+      margin-top: 30px;
+      color: #333;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h2>Order Status List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Status Name</th>
+        <th>Status Code</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Inquiry</td>
+        <td>inquiry</td>
+        <td>UserB has submitted a request. The order is not yet created. For quote-based services, waiting for UserA to send a quote. For base-price services, UserA can either accept the order directly or adjust the quote based on the request.</td>
+      </tr>
+      <tr>
+        <td>Awaiting Payment</td>
+        <td>awaiting_payment</td>
+        <td>UserA has provided a quote, and UserB has accepted it, but payment has not yet been made. The final price is confirmed and awaiting payment to proceed.</td>
+      </tr>
+      <tr>
+        <td>In Progress</td>
+        <td>in_progress</td>
+        <td>UserB has completed payment. The order is officially created and now listed in the active orders. UserA starts working on the project.</td>
+      </tr>
+      <tr>
+        <td>Delivered</td>
+        <td>delivered</td>
+        <td>UserA has submitted the final deliverables. Awaiting confirmation from UserB.</td>
+      </tr>
+      <tr>
+        <td>In Revision</td>
+        <td>in_revision</td>
+        <td>UserB has requested revisions. The order remains open and will be updated accordingly.</td>
+      </tr>
+      <tr>
+        <td>Completed</td>
+        <td>completed</td>
+        <td>UserB has confirmed the work is complete, or the system has auto-completed the order after a set period.</td>
+      </tr>
+      <tr>
+        <td>Cancelled</td>
+        <td>cancelled</td>
+        <td>Either party has cancelled the order. This may occur before payment, during production, or after delivery.</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
