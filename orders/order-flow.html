@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Frontend development guide for order workflow system including SEO, multilingual support, and UX performance." />
+  <meta name="keywords" content="React, Order Workflow, Multilingual, SEO, UX, Frontend Design" />
+  <meta name="author" content="Project Team" />
+  <title>Frontend Task Overview – Order Workflow System</title>
+</head>
+<body>
+  <section>
+    <h1>Frontend Implementation Guidelines: Order Workflow System</h1>
+
+    <h2>📌 Project Objective</h2>
+    <p>
+      This project aims to implement an optimized frontend logic for the order workflow system, based on business requirements.
+      The implementation must consider and balance three major factors:
+    </p>
+    <ul>
+      <li>✅ SEO Optimization</li>
+      <li>✅ User Experience (UX)</li>
+      <li>✅ Website Performance (Speed & Responsiveness)</li>
+    </ul>
+
+    <h2>🔁 Workflow Structure</h2>
+    <p>The order process is divided into two major user roles:</p>
+    <ul>
+      <li><strong>user-a</strong>: Creates and manages order templates.</li>
+      <li><strong>user-b</strong>: Places an order based on templates created by user-a.</li>
+    </ul>
+    <p>Payments for work can be processed in multiple stages based on task completion.</p>
+
+    <h2>💡 Task Breakdown & Budget</h2>
+
+    <h3>1. Order Template Creation (by user-a) – Total: $100</h3>
+    <ul>
+      <li><strong>$80 – Configure Order Requirements</strong>
+        <ul>
+          <li>Description / Reference</li>
+          <li>Payment Method</li>
+          <li>Delivery Time</li>
+          <li>Starting Price</li>
+          <li>Discount Policy</li>
+          <li>Options / Inputs</li>
+        </ul>
+      </li>
+      <li><strong>$20 – Default Contract Text Initialization</strong></li>
+    </ul>
+
+    <h3>2. Place Order & Send Quote (by user-b) – Total: $100</h3>
+    <ul>
+      <li>Option / Input Confirmation</li>
+      <li>Contract Confirmation and Signing</li>
+      <li>Payment</li>
+      <li>Order Delivery</li>
+      <li>Rating or Ignoring</li>
+    </ul>
+
+    <h3>3. Admin-Member Dashboard – Total: $50</h3>
+    <p>
+      Interface to manage promoted orders and direct orders.<br/>
+      <a href="https://case2025.github.io/admin_dashboard/manage/member_dashboard.html" target="_blank">
+        View Dashboard UI
+      </a>
+    </p>
+
+    <h2>🌐 Multilingual & SEO Strategy</h2>
+    <ul>
+      <li>The site must support multilingual content (default: Japanese, plus English and one additional language).</li>
+      <li>Ensure the use of correct <code>hreflang</code> attributes in HTML to prioritize Japanese for SEO indexing.</li>
+      <li>Static page content should be server-rendered or SSR-ready for better SEO visibility (if using Next.js or similar).</li>
+      <li>Use language-specific meta titles, meta descriptions, and canonical URLs.</li>
+    </ul>
+
+    <h2>🛠️ Frontend Development Guidelines</h2>
+    <ul>
+      <li>Use <strong>React.lazy</strong> and <strong>Suspense</strong> to lazy-load large components and improve initial load time.</li>
+      <li>All order forms should be dynamically driven via a <strong>JSON schema</strong> system to support flexible field control.</li>
+      <li>All text and labels must be managed via a centralized <strong>i18n</strong> structure (e.g., using i18next or similar).</li>
+      <li>Images, assets, and icons should be optimized and lazy-loaded wherever applicable.</li>
+      <li>Maintain <strong>mobile-first responsive design</strong> to support various devices.</li>
+      <li>Use semantic HTML tags (<code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;header&gt;</code>, etc.) to support accessibility and SEO.</li>
+    </ul>
+
+    <h2>🔧 UI Adjustment Policy</h2>
+    <p>
+      During development, UI adjustments are allowed and encouraged when necessary to align with the underlying business logic.
+      Design should not restrict workflow efficiency. If UI changes improve usability or better reflect real user scenarios, they should be applied without hesitation.
+    </p>
+  </section>
+</body>
+</html>
