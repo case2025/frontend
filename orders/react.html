@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hayaku Platform - Order Pricing Logic</title>
+</head>
+<body>
+
+  <h1>Platform - Quotation Logic Overview</h1>
+
+  <h2>Core Concept</h2>
+  <ul>
+    <li>User-A always inputs their desired income (e.g. 100,000 JPY).</li>
+    <li>The platform automatically adds a promotion fee (%) based on the number of past transactions with the same client.</li>
+    <li>The total price shown to the client includes that promotion fee.</li>
+    <li>The promotion fee starts at 36.5% (1st transaction) and decreases by 2.5% per transaction until it reaches 6.5%.</li>
+    <li>The User's income remains fixed regardless of the promotion fee step.</li>
+    <li>The client sees a gradually discounted price over repeated transactions.</li>
+  </ul>
+
+  <h2>Example Breakdown</h2>
+  <table border="1" cellpadding="6">
+    <thead>
+      <tr>
+        <th>Transaction Count</th>
+        <th>Promotion Fee %</th>
+        <th>Client Pays (auto-calculated)</th>
+        <th>User-A Receives</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1st</td><td>36.5%</td><td>100,000 × 1.365 = 136,500 JPY</td><td>100,000 JPY</td></tr>
+      <tr><td>2nd</td><td>34.0%</td><td>100,000 × 1.34 = 134,000 JPY</td><td>100,000 JPY</td></tr>
+      <tr><td>3rd</td><td>31.5%</td><td>100,000 × 1.315 = 131,500 JPY</td><td>100,000 JPY</td></tr>
+      <tr><td>...</td><td>...</td><td>...</td><td>100,000 JPY</td></tr>
+      <tr><td>13th</td><td>6.5%</td><td>100,000 × 1.065 = 106,500 JPY</td><td>100,000 JPY</td></tr>
+    </tbody>
+  </table>
+
+  <h2>API / UI Expected Behavior</h2>
+  <ul>
+    <li><strong>User-A inputs:</strong> desired net income (e.g. 100000)</li>
+    <li><strong>Platform calculates:</strong> promotion fee % based on transaction count with client</li>
+    <li><strong>Final quote shown to client:</strong> net income × (1 + promo rate)</li>
+    <li><strong>User-A sees:</strong> what they’ll receive and what client will be quoted</li>
+  </ul>
+
+  <h2>Notes for Frontend</h2>
+  <ul>
+    <li>Promotion fee % must be calculated dynamically per client-User-A pair.</li>
+    <li>Client UI can show a message like “Returning client discount -2.5% applied”.</li>
+    <li>User-A sees only their fixed desired amount + auto-calculated client price.</li>
+    <li>Important: User-A should not manually adjust the client price.</li>
+  </ul>
+
+</body>
+</html>
